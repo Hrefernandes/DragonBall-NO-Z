@@ -1,74 +1,83 @@
 from pymongo import MongoClient
+from bson import ObjectId
 
 client = MongoClient('mongodb://localhost:27017/')
 
-db = client.ClashNotRoyal
+db = client.gameMongo
 collection = db.monsters
 
 collection.drop()
 
-collection.insert_many([
-    {
-        "name": "Gobelin",
-        "attack": 10,
-        "defense": 5,
-        "health": 50
-    },
-    {
-        "name": "Géant",
-        "attack": 20,
-        "defense": 8,
-        "health": 120
-    },
-    {
-        "name": "Dragon de l'enfer",
-        "attack": 35,
-        "defense": 20,
-        "health": 300
-    },
-    {
-        "name": "Cochon royal",
-        "attack": 12,
-        "defense": 6,
-        "health": 70
-    },
-    {
-        "name": "Fantôme royal",
-        "attack": 25,
-        "defense": 15,
-        "health": 200
-    },
-    {
-        "name": "Barbare",
-        "attack": 18,
-        "defense": 10,
-        "health": 100
-    },
-    {
-        "name": "Golem",
-        "attack": 30,
-        "defense": 20,
-        "health": 250
-    },
-    {
-        "name": "Sorcière",
-        "attack": 22,
-        "defense": 12,
-        "health": 150
-    },
-    {
-        "name": "Mega Chevalier",
-        "attack": 32,
-        "defense": 18,
-        "health": 200
-    },
-    {
-        "name": "Squelette",
-        "attack": 15,
-        "defense": 7,
-        "health": 90
-    }
-])
+collection.insert_many([{
+  "_id": ObjectId("678ede35e38b86e326b876b7"),
+  "name": "Gobelin",
+  "attack": 10,
+  "defense": 6,
+  "hp": 150
+},
+{
+  "_id": ObjectId("678ede35e38b86e326b876b8"),
+  "name": "Orc",
+  "attack": 10,
+  "defense": 8,
+  "hp": 180
+},
+{
+  "_id": ObjectId("678ede35e38b86e326b876b9"),
+  "name": "Dragon",
+  "attack": 10,
+  "defense": 12,
+  "hp": 200
+},
+{
+  "_id": ObjectId("678ede35e38b86e326b876ba"),
+  "name": "Zombie",
+  "attack": 10,
+  "defense": 7,
+  "hp": 160
+},
+{
+  "_id": ObjectId("678ede35e38b86e326b876bb"),
+  "name": "Troll",
+  "attack": 10,
+  "defense": 10,
+  "hp": 190
+},
+{
+  "_id": ObjectId("678ede35e38b86e326b876bc"),
+  "name": "Spectre",
+  "attack": 24,
+  "defense": 6,
+  "hp": 170
+},
+{
+  "_id": ObjectId("678ede35e38b86e326b876bd"),
+  "name": "Golem",
+  "attack": 21,
+  "defense": 14,
+  "hp": 210
+},
+{
+  "_id": ObjectId("678ede35e38b86e326b876be"),
+  "name": "Vampire",
+  "attack": 26,
+  "defense": 9,
+  "hp": 175
+},
+{
+  "_id": ObjectId("678ede35e38b86e326b876bf"),
+  "name": "Loup-garou",
+  "attack": 24,
+  "defense": 8,
+  "hp": 185
+},
+{
+  "_id": ObjectId("678ede35e38b86e326b876c0"),
+  "name": "Squelette",
+  "attack": 19,
+  "defense": 7,
+  "hp": 155
+}])
 
 collection = db.heros
 
@@ -76,155 +85,121 @@ collection.drop()
 
 collection.insert_many([
     {
-        "name": "Chevalier",
-        "attack": 15,
-        "defense": 10,
-        "health": 100,
-        "type": "tank",
-        "effect_chance": 0.25,
-        "effect_damage": 5,
-        "effect_duration": 2
+    "_id": ObjectId("678ede35e38b86e326b876ad"),
+    "name": "Paladin",
+    "attack": 20,
+    "defense": 12,
+    "hp": 120
     },
     {
-        "name": "Sorcier",
-        "attack": 20,
-        "defense": 5,
-        "health": 80,
-        "type": "sorcerer",
-        "effect_chance": 0.3,
-        "effect_damage": 4,
-        "effect_duration": 3
+    "_id": ObjectId("678ede35e38b86e326b876ae"),
+    "name": "Chevalier",
+    "attack": 22,
+    "defense": 10,
+    "hp": 110
     },
     {
-        "name": "Archères",
-        "attack": 18,
-        "defense": 7,
-        "health": 90,
-        "type": "dps"
+    "_id": ObjectId("678ede35e38b86e326b876af"),
+    "name": "Berserker",
+    "attack": 29,
+    "defense": 6,
+    "hp": 90
     },
     {
-        "name": "Cheffe des voleuses",
-        "attack": 22,
-        "defense": 10,
-        "health": 100,
-        "type": "dps"
+    "_id": ObjectId("678ede35e38b86e326b876b0"),
+    "name": "Archer",
+    "attack": 26,
+    "defense": 7,
+    "hp": 85
     },
     {
-        "name": "Moine",
-        "attack": 14,
-        "defense": 12,
-        "health": 110,
-        "type": "tank",
-        "effect_chance": 0.2,
-        "effect_damage": 6,
-        "effect_duration": 2
+    "_id": ObjectId("678ede35e38b86e326b876b1"),
+    "name": "Sorcier",
+    "attack": 32,
+    "defense": 4,
+    "hp": 75
     },
     {
-        "name": "Bucheron",
-        "attack": 25,
-        "defense": 3,
-        "health": 70,
-        "type": "dps"
+    "_id": ObjectId("678ede35e38b86e326b876b2"),
+    "name": "Guerrier",
+    "attack": 24,
+    "defense": 8,
+    "hp": 100
     },
     {
-        "name": "Voleur",
-        "attack": 17,
-        "defense": 15,
-        "health": 120,
-        "type": "tank",
-        "effect_chance": 0.25,
-        "effect_damage": 5,
-        "effect_duration": 2
+    "_id": ObjectId("678ede35e38b86e326b876b3"),
+    "name": "Moine",
+    "attack": 22,
+    "defense": 9,
+    "hp": 95
     },
     {
-        "name": "P.E.K.K.A",
-        "attack": 19,
-        "defense": 9,
-        "health": 95,
-        "type": "tank"
+    "_id": ObjectId("678ede35e38b86e326b876b4"),
+    "name": "Voleur",
+    "attack": 28,
+    "defense": 5,
+    "hp": 80
     },
     {
-        "name": "Chevaucheur de cochons",
-        "attack": 23,
-        "defense": 6,
-        "health": 105,
-        "type": "dps"
+    "_id": ObjectId("678ede35e38b86e326b876b5"),
+    "name": "Chasseur",
+    "attack": 23,
+    "defense": 8,
+    "hp": 90
     },
     {
-        "name": "Molosse de lave",
-        "attack": 16,
-        "defense": 11,
-        "health": 100,
-        "type": "dps"
+    "_id": ObjectId("678ede35e38b86e326b876b6"),
+    "name": "Druide",
+    "attack": 21,
+    "defense": 9,
+    "hp": 100
     }
 ])
 
-
-collection = db.loot
+collection = db.scores
 
 collection.drop()
 
 collection.insert_many([
     {
-        "name": "Potion de soin",
-        "effet": "health",
-        "value": 20
-    },
-    {
-        "name": "Potion de mana",
-        "effect": "health",
-        "value": 20
-    },
-    {
-        "name": "Potion de force",
-        "effect": "health",
-        "value": 20
-    },
-    {
-        "name": "Potion de poison",
-        "effect": "health",
-        "value": -20
-    },
-    {
-        "name": "Potion de faiblesse",
-        "effect": "attack",
-        "value": -5
-    },
-    {
-        "name": "Potion de fragilité",
-        "effect": "defense",
-        "value": -5
-    },
-    {
-        "name": "Potion de mort",
-        "effect": "health",
-        "value": -1000
-    },    
+  "_id": ObjectId("678fa3819c660c863a0ee737"),
+  "player_name": "sdfgg",
+  "waves": 6
+},
+{
+  "_id": ObjectId("678fa8809c660c863a0ee738"),
+  "player_name": "Try 2",
+  "waves": 9
+},
+{
+  "_id": ObjectId("678fac5e2bb38f7c5e141e96"),
+  "player_name": "Try3",
+  "waves": 6
+},
+{
+  "_id": ObjectId("698607a006760d31f787cc4e"),
+  "player_name": "rme",
+  "waves": 10
+},
+{
+  "_id": ObjectId("698af2f26640e3bb42f6cb8c"),
+  "player_name": "dsfgddf",
+  "waves": 35
+},
+{
+  "_id": ObjectId("698b3387dac89d2e7e4f35f7"),
+  "player_name": "rme",
+  "waves": 14
+},
+{
+  "_id": ObjectId("698f25ca98f02029a1c3dcdb"),
+  "player_name": "rme",
+  "waves": 54
+},
+{
+  "_id": ObjectId("69ae8acbf7bf484a24a76521"),
+  "player_name": "rme",
+  "waves": 51
+}
 ])
 
-collection = db.equipments
-
-collection.drop()
-
-collection.insert_many([
-    {
-        "name": "Armure de fer",
-        "effect": "defense",
-        "value": 10,
-    },
-    {
-        "name": "Armure de cuir",
-        "effect": "defense",
-        "value": 5,
-    },
-    {
-        "name": "Armure de cuir lourd",
-        "effect": "defense",
-        "value": 15,
-    },
-    {
-        "name": "Armure de à épines",
-        "effect": "attack",
-        "value": 5,
-    }
-])
