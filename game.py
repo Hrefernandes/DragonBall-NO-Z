@@ -11,7 +11,7 @@ def menu_principal():
   
 menuChoice = 0
   
-while menuChoice < 1 & menuChoice > 3:
+while menuChoice < 1 or menuChoice > 3:
   menu_principal()
   menuChoice = int(input("*** : "))
 
