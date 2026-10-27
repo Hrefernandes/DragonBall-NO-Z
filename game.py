@@ -1,3 +1,5 @@
+# logique de combat
+
 from pymongo import MongoClient
 
 client = MongoClient("mongodb://localhost:27017")
@@ -13,23 +15,22 @@ menuChoice = 0
   
 while menuChoice < 1 or menuChoice > 3:
   menu_principal()
-  menuChoice = int(input("*** : "))
+  menuChoice = int(input("*** : ")) # verifier que c'est un int si oui on convertis si non on relance sinon crash au moment de la convertion
 
 
 
 # lancement du script
 # menu avec choix
 #   jouer
-#     lance le jeux avec la saisie
+#     lance le jeux avec la saisie ->
 #   classement
 #     affiche table des scores
 #   quitter
 
 # saisie :
-#   saisie nom
-#   saisie nb heros ( max 3 )
+#   saisie nom (non vide)
 #   affichage des infos heros
-#     saisie selection des heros
+#     saisie selection des heros (non vide) (3 heros)
 # debut de la partie
 #   resume bataille du round
 #     info hero
