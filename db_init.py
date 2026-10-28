@@ -40,4 +40,14 @@ collection.insert_many([
     {"name": "Vegeta (Gorille geant)",  "attack": 21, "defense": 9,  "hp": 100},
 ])
 
+# Scores
+collection = db.scores
+collection.drop()
+
+collection.insert_many([
+    {"name": "Sacha",   "waves": 7},
+    {"name": "Lina",    "waves": 20},
+    {"name": "Maxime",  "waves": 3},
+])
+
 print("Base créer.")

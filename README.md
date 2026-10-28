@@ -1,5 +1,26 @@
-# Game mongo / DragonBall NO Z
+# DragonBall NO Z
 
-* db_init.py -> init de la bdd
+## Prérequis
 
-* python db_init.py
+- Python
+- MongoDB installé et lancé (`mongodb://localhost:27017/`)
+- La bibliothèque `pymongo`
+
+```bash
+pip install pymongo
+```
+
+## Lancement
+
+Initialiser la base :
+
+```bash
+python db_init.py
+```
+
+Lancer le jeu :
+
+```bash
+python main.py
+```
+
