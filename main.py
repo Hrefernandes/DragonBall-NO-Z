@@ -2,7 +2,7 @@
 
 import sys
 from game import start_game, show_scores
-from utils import request_input, is_choice_valid
+from utils import request_input, is_choice_valid, choose_option
 
 def quit_game():
   sys.exit()
@@ -19,16 +19,12 @@ def start_menu(menu):
     print(str(n) + " - " + option[0])
     n += 1
 
-def choose_option(menu):
-  while True:
-    choice = request_input("Votre choix : ")
-    if is_choice_valid(choice, menu):
-      return menu[int(choice) - 1]
-
 def main():
   while True:
     start_menu(MENU)
     option = choose_option(MENU)
-    option[1]()
+    MENU[option - 1][1]()
+
+
 
 main()

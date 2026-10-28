@@ -45,7 +45,9 @@ def create_teams():
   while len(heros_choosen) < TAILLE_EQUIPE:
     heros_remaining = get_heros_not_choose(heros, heros_choosen)
     show_list(heros_remaining)
-    heros_choosen.append(choose_hero(heros_remaining))
+    message_hero_choice = create_hero_choice_message(heros_remaining)
+    choice = choose_option(heros_remaining, message_hero_choice)
+    heros_choosen.append(heros_remaining[choice - 1])
     show_team(heros_choosen)
   return heros_choosen
 

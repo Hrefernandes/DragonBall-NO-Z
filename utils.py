@@ -40,3 +40,12 @@ def get_in_life(characters):
     if character.is_in_life():
       in_life.append(character)
   return in_life
+
+def choose_option(options, message="Votre choix : "):
+  while True:
+    choice = request_input(message)
+    if is_choice_valid(choice, options):
+      return int(choice)
+
+def create_hero_choice_message(heros_remaining):
+    return "Choisissez votre héros (1-" + str(len(heros_remaining)) + ") : "
