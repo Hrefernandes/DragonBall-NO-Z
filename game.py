@@ -33,11 +33,12 @@ def create_player():
     if is_pseudo_valid(pseudo):
       return pseudo
 
-def choose_hero(heros_remaining):
-  while True:
-    choice = request_input("Votre choix : ")
-    if is_choice_valid(choice, heros_remaining):
-      return heros_remaining[int(choice) - 1]
+def get_heros_not_choose(heros, heros_choosen):
+  remaining = []
+  for hero in heros:
+    if hero not in heros_choosen:
+      remaining.append(hero)
+  return remaining
 
 def create_teams():
   heros = get_heros()
@@ -50,6 +51,13 @@ def create_teams():
     heros_choosen.append(heros_remaining[choice - 1])
     show_team(heros_choosen)
   return heros_choosen
+
+def get_in_life(characters):
+  in_life = []
+  for character in characters:
+    if character.is_in_life():
+      in_life.append(character)
+  return in_life
 
 def get_waves(score):
   return score["waves"]

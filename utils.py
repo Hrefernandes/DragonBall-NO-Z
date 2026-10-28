@@ -13,13 +13,6 @@ def show_list(elements):
     print(str(n) + " - " + str(element))
     n += 1
 
-def get_heros_not_choose(heros, heros_choosen):
-  remaining = []
-  for hero in heros:
-    if hero not in heros_choosen:
-      remaining.append(hero)
-  return remaining
-
 def is_choice_valid(choice, heros_remaining):
   if not choice.isdigit():
     error("Entrez un nombre")
@@ -33,13 +26,6 @@ def is_choice_valid(choice, heros_remaining):
 def show_team(hero_choosen):
   print("Votre équipe :")
   show_list(hero_choosen)
-
-def get_in_life(characters):
-  in_life = []
-  for character in characters:
-    if character.is_in_life():
-      in_life.append(character)
-  return in_life
 
 def choose_option(options, message="Votre choix : "):
   while True:
